@@ -86,6 +86,16 @@ namespace csharp_steamgaug_es_api_core.Manager
             return _steamgaugResponseModel.SteamStore.Time;
         }
 
+        public bool SteamStoreHasError()
+        {
+            updateResponseModel();
+            if (_steamgaugResponseModel.SteamStore.Error == "No Error")
+            {
+                return false;
+            }
+            return true;
+        }
+
         private void updateResponseModel()
         {
             SteamgaugResponseModel steamgaugResponseModel = _steamgaugResponseModel;
