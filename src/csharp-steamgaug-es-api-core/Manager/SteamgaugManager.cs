@@ -70,6 +70,16 @@ namespace csharp_steamgaug_es_api_core.Manager
             return true;
         }
 
+        public bool IsSteamStoreOnline()
+        {
+            updateResponseModel();
+            if (_steamgaugResponseModel.SteamStore.Online == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+
         private void updateResponseModel()
         {
             SteamgaugResponseModel steamgaugResponseModel = _steamgaugResponseModel;
