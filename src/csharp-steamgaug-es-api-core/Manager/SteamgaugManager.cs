@@ -80,6 +80,12 @@ namespace csharp_steamgaug_es_api_core.Manager
             return false;
         }
 
+        public int SteamStoreResponseTime()
+        {
+            updateResponseModel();
+            return _steamgaugResponseModel.SteamStore.Time;
+        }
+
         private void updateResponseModel()
         {
             SteamgaugResponseModel steamgaugResponseModel = _steamgaugResponseModel;
