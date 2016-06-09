@@ -60,7 +60,7 @@ namespace csharp_steamgaug_es_api_core.Manager
             return _steamgaugResponseModel.SteamCommunity.Time;
         }
 
-        public bool SteamCommunityError()
+        public bool SteamCommunityHasError()
         {
             updateResponseModel();
             if (_steamgaugResponseModel.SteamCommunity.Error == "No Error")
