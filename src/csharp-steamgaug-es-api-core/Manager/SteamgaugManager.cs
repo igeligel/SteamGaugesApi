@@ -37,21 +37,19 @@ namespace csharp_steamgaug_es_api_core.Manager
         public bool IsSteamClientOnline()
         {
             updateResponseModel();
-            if (_steamgaugResponseModel.SteamClient.Online == 1)
-            {
-                return true;
-            }
-            return false;
+            return IsOnline(_steamgaugResponseModel.SteamClient.Online);
         }
 
         public bool IsSteamCommunityOnline()
         {
             updateResponseModel();
-            if (_steamgaugResponseModel.SteamCommunity.Online == 1)
-            {
-                return true;
-            }
-            return false;
+            return IsOnline(_steamgaugResponseModel.SteamCommunity.Online);
+        }
+
+        public bool IsSteamStoreOnline()
+        {
+            updateResponseModel();
+            return IsOnline(_steamgaugResponseModel.SteamStore.Online);
         }
 
         public int SteamCommunityResponseTime()
@@ -60,36 +58,36 @@ namespace csharp_steamgaug_es_api_core.Manager
             return _steamgaugResponseModel.SteamCommunity.Time;
         }
 
-        public bool SteamCommunityHasError()
-        {
-            updateResponseModel();
-            if (_steamgaugResponseModel.SteamCommunity.Error == "No Error")
-            {
-                return false;
-            }
-            return true;
-        }
-
-        public bool IsSteamStoreOnline()
-        {
-            updateResponseModel();
-            if (_steamgaugResponseModel.SteamStore.Online == 1)
-            {
-                return true;
-            }
-            return false;
-        }
-
         public int SteamStoreResponseTime()
         {
             updateResponseModel();
             return _steamgaugResponseModel.SteamStore.Time;
         }
 
+        public bool SteamCommunityHasError()
+        {
+            updateResponseModel();
+            return hasError(_steamgaugResponseModel.SteamCommunity.Error);
+        }
+        
         public bool SteamStoreHasError()
         {
             updateResponseModel();
-            if (_steamgaugResponseModel.SteamStore.Error == "No Error")
+            return hasError(_steamgaugResponseModel.SteamStore.Error);
+        }
+
+        private bool IsOnline(int status)
+        {
+            if (status == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private bool hasError(string errorMessage)
+        {
+            if (errorMessage == "No Error")
             {
                 return false;
             }
