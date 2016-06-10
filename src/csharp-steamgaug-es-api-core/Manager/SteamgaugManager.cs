@@ -179,6 +179,27 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
         }
 
+        public bool GameCoordinatorHasError(Game game)
+        {
+            updateResponseModel();
+            if (game == Game.TeamFortress)
+            {
+                return HasError(_steamgaugResponseModel.SteamGameCoordinator["440"].Error);
+            }
+            else if (game == Game.CounterStrikeGlobalOffensive)
+            {
+                return HasError(_steamgaugResponseModel.SteamGameCoordinator["570"].Error);
+            }
+            else if (game == Game.DotaTwo)
+            {
+                return HasError(_steamgaugResponseModel.SteamGameCoordinator["730"].Error);
+            }
+            else
+            {
+                throw new GameNotSupportedException();
+            }
+        }
+
         private bool IsOnline(int status)
         {
             if (status == 1)
