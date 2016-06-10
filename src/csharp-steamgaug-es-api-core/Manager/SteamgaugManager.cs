@@ -95,6 +95,24 @@ namespace csharp_steamgaug_es_api_core.Manager
             return _steamgaugResponseModel.SteamUser.Time;
         }
 
+        public int? GetEconomyResponseTime(Game game)
+        {
+            updateResponseModel();
+            if (game == Game.TeamFortress)
+            {
+                return _steamgaugResponseModel.EconItems["440"].Time;
+            }
+            else if (game == Game.CounterStrikeGlobalOffensive)
+            {
+                return _steamgaugResponseModel.EconItems["570"].Online;
+            }
+            else if (game == Game.DotaTwo)
+            {
+                return _steamgaugResponseModel.EconItems["730"].Online;
+            }
+            return null;
+        }
+
         public bool SteamCommunityHasError()
         {
             updateResponseModel();
