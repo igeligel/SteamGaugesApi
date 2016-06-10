@@ -52,6 +52,12 @@ namespace csharp_steamgaug_es_api_core.Manager
             return IsOnline(_steamgaugResponseModel.SteamStore.Online);
         }
 
+        public bool IsSteamUserOnline()
+        {
+            updateResponseModel();
+            return IsOnline(_steamgaugResponseModel.SteamUser.Online);
+        }
+
         public int SteamCommunityResponseTime()
         {
             updateResponseModel();
@@ -64,16 +70,28 @@ namespace csharp_steamgaug_es_api_core.Manager
             return _steamgaugResponseModel.SteamStore.Time;
         }
 
+        public int SteamUserResponseTime()
+        {
+            updateResponseModel();
+            return _steamgaugResponseModel.SteamUser.Time;
+        }
+
         public bool SteamCommunityHasError()
         {
             updateResponseModel();
-            return hasError(_steamgaugResponseModel.SteamCommunity.Error);
+            return HasError(_steamgaugResponseModel.SteamCommunity.Error);
         }
         
         public bool SteamStoreHasError()
         {
             updateResponseModel();
-            return hasError(_steamgaugResponseModel.SteamStore.Error);
+            return HasError(_steamgaugResponseModel.SteamStore.Error);
+        }
+
+        public bool SteamUserHasError()
+        {
+            updateResponseModel();
+            return HasError(_steamgaugResponseModel.SteamUser.Error);
         }
 
         private bool IsOnline(int status)
@@ -85,7 +103,7 @@ namespace csharp_steamgaug_es_api_core.Manager
             return false;
         }
 
-        private bool hasError(string errorMessage)
+        private bool HasError(string errorMessage)
         {
             if (errorMessage == "No Error")
             {
