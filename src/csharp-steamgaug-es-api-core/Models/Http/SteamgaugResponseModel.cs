@@ -70,13 +70,24 @@ namespace csharp_steamgaug_es_api_core.Models.Http
     public class Stats
     {
         [JsonProperty(PropertyName = "spyScore")]
-        public string SpyScore { get; set; }
+        public int? SpyScore { get; set; }
         [JsonProperty(PropertyName = "engiScore")]
-        public string EngiScore { get; set; }
+        public int? EngiScore { get; set; }
         [JsonProperty(PropertyName = "players_searching")]
         public int? PlayersSearching { get; set; }
         [JsonProperty(PropertyName = "players_online")]
         public int? PlayersOnline { get; set; }
+        [JsonProperty(PropertyName = "average_wait")]
+        public int? AverageWaitTime { get; set; }
+        [JsonProperty(PropertyName = "ongoing_matches")]
+        public int? OnGoingMatches { get; set; }
+        [JsonProperty(PropertyName = "servers_available")]
+        public int? ServersAvailable { get; set; }
+        [JsonProperty(PropertyName = "servers_online")]
+        public int? ServersOnline { get; set; }
+        [JsonProperty(PropertyName = "menu_url")]
+        public string MenuUrl { get; set; }
+
     }
 
     public class GameEconItems
