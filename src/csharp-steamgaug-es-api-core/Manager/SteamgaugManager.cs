@@ -224,7 +224,23 @@ namespace csharp_steamgaug_es_api_core.Manager
             {
                 return spyScore.Value;
             }
-            
+        }
+
+        public int GetEngineScore(Game game)
+        {
+            if (game != Game.TeamFortress)
+            {
+                throw new GameNotSupportedException();
+            }
+            int? engiScore = _steamgaugResponseModel.SteamGameCoordinator["440"].Stats.EngiScore;
+            if (engiScore == null)
+            {
+                throw new SteamgaugOfflineException();
+            }
+            else
+            {
+                return engiScore.Value;
+            }
         }
 
         private bool IsOnline(int status)
