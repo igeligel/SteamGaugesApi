@@ -68,6 +68,20 @@ namespace csharp_steamgaug_es_api_core.Manager
             return IsOnline(_steamgaugResponseModel.SteamClient.Online);
         }
 
+        /// <summary>
+        /// Method to check if the steam client is online.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// bool steamClientIsOnline = SteamgaugesManager.Instance.IsSteamCommunityOnline();
+        /// </code>
+        /// </example>
+        /// <returns>
+        /// A boolean which describes the current status of the steam community.
+        /// It will return true if the steam community is online.
+        /// It will return false if the steam community is offline.
+        /// </returns>
         public bool IsSteamCommunityOnline()
         {
             updateResponseModel();
