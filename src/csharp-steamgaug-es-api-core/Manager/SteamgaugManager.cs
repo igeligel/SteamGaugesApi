@@ -1,6 +1,7 @@
 using System;
 using csharp_steamgaug_es_api_core.Exceptions;
 using csharp_steamgaug_es_api_core.Http;
+using csharp_steamgaug_es_api_core.Models.Enums;
 using csharp_steamgaug_es_api_core.Models.Http;
 using Newtonsoft.Json;
 
@@ -56,6 +57,24 @@ namespace csharp_steamgaug_es_api_core.Manager
         {
             updateResponseModel();
             return IsOnline(_steamgaugResponseModel.SteamUser.Online);
+        }
+
+        public bool IsEconomyOnline(Game game)
+        {
+            updateResponseModel();
+            if (game == Game.TeamFortress)
+            {
+                return IsOnline(_steamgaugResponseModel.SteamGameCoordinator["440"].Online);
+            }
+            else if (game == Game.CounterStrikeGlobalOffensive)
+            {
+                return IsOnline(_steamgaugResponseModel.SteamGameCoordinator["570"].Online);
+            }
+            else if (game == Game.DotaTwo)
+            {
+                return IsOnline(_steamgaugResponseModel.SteamGameCoordinator["730"].Online);
+            }
+            return false;
         }
 
         public int SteamCommunityResponseTime()
