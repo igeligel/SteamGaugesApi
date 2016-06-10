@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace csharp_steamgaug_es_api_core.Http
 {
-    public static class SteamgaugService
+    public static class SteamgaugesService
     {
         public static async Task<string> GetJsonData()
         {
@@ -16,7 +16,7 @@ namespace csharp_steamgaug_es_api_core.Http
                 string result = await content.ReadAsStringAsync();
                 if (result != null)
                 {
-                    SteamgaugResponseModel responseModel = JsonConvert.DeserializeObject<SteamgaugResponseModel>(result);
+                    SteamgaugesResponseModel responseModel = JsonConvert.DeserializeObject<SteamgaugesResponseModel>(result);
                     return result;
                 }
             }

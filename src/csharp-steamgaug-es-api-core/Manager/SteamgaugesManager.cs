@@ -7,16 +7,16 @@ using Newtonsoft.Json;
 
 namespace csharp_steamgaug_es_api_core.Manager
 {
-    public sealed class SteamgaugManager
+    public sealed class SteamgaugesManager
     {
-        private static volatile SteamgaugManager instance;
+        private static volatile SteamgaugesManager instance;
         private static object syncRoot = new object();
         private static DateTime _lastRequest;
-        private static SteamgaugResponseModel _steamgaugResponseModel = new SteamgaugResponseModel();
+        private static SteamgaugesResponseModel _steamgaugResponseModel = new SteamgaugesResponseModel();
 
-        private SteamgaugManager() { }
+        private SteamgaugesManager() { }
 
-        public static SteamgaugManager Instance
+        public static SteamgaugesManager Instance
         {
             get
             {
@@ -26,7 +26,7 @@ namespace csharp_steamgaug_es_api_core.Manager
                     {
                         if (instance == null)
                         {
-                            instance = new SteamgaugManager();
+                            instance = new SteamgaugesManager();
                         }
 
                     }
@@ -377,12 +377,12 @@ namespace csharp_steamgaug_es_api_core.Manager
 
         private void updateResponseModel()
         {
-            SteamgaugResponseModel steamgaugResponseModel = _steamgaugResponseModel;
+            SteamgaugesResponseModel steamgaugResponseModel = _steamgaugResponseModel;
             if (_lastRequest == null || !ResponseCached())
             {
                 _lastRequest = DateTime.UtcNow;
-                var result = SteamgaugService.GetJsonData().Result;
-                steamgaugResponseModel = JsonConvert.DeserializeObject<SteamgaugResponseModel>(result);
+                var result = SteamgaugesService.GetJsonData().Result;
+                steamgaugResponseModel = JsonConvert.DeserializeObject<SteamgaugesResponseModel>(result);
             }
             if (_steamgaugResponseModel == null)
             {

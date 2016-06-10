@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace csharp_steamgaug_es_api_core.Models.Http
 {
-    public class SteamgaugResponseModel
+    public class SteamgaugesResponseModel
     {
         [JsonProperty(PropertyName = "ISteamClient")]
         public SteamClient SteamClient { get; set; }
