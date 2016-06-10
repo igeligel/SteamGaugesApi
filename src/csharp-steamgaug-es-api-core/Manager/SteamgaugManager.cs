@@ -323,6 +323,40 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
         }
 
+        public string GetMenuUrl(Game game)
+        {
+            if (game != Game.DotaTwo)
+            {
+                throw new GameNotSupportedException();
+            }
+            string menuUrl = _steamgaugResponseModel.SteamGameCoordinator["730"].Stats.MenuUrl;
+            if (menuUrl == null)
+            {
+                throw new SteamgaugOfflineException();
+            }
+            else
+            {
+                return menuUrl;
+            }
+        }
+
+        public int GetPlayersOnline(Game game)
+        {
+            if (game != Game.DotaTwo)
+            {
+                throw new GameNotSupportedException();
+            }
+            int? playersOnline = _steamgaugResponseModel.SteamGameCoordinator["730"].Stats.PlayersOnline;
+            if (playersOnline == null)
+            {
+                throw new SteamgaugOfflineException();
+            }
+            else
+            {
+                return playersOnline.Value;
+            }
+        }
+
         private bool IsOnline(int status)
         {
             if (status == 1)
