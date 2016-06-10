@@ -200,7 +200,7 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
         }
 
-        public int GetSpyScore(Game game)
+        public int? GetSpyScore(Game game)
         {
             if (game != Game.TeamFortress)
             {
