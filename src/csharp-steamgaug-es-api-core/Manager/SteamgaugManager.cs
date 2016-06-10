@@ -200,6 +200,15 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
         }
 
+        public int GetSpyScore(Game game)
+        {
+            if (game != Game.TeamFortress)
+            {
+                throw new GameNotSupportedException();
+            }
+            return _steamgaugResponseModel.SteamGameCoordinator["440"].Stats.SpyScore;
+        }
+
         private bool IsOnline(int status)
         {
             if (status == 1)
