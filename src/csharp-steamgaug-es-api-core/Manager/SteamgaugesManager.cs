@@ -14,7 +14,10 @@ namespace csharp_steamgaug_es_api_core.Manager
         private static DateTime _lastRequest;
         private static SteamgaugesResponseModel _steamgaugResponseModel = new SteamgaugesResponseModel();
 
-        private SteamgaugesManager() { }
+        private SteamgaugesManager()
+        {
+            
+        }
 
         public static SteamgaugesManager Instance
         {
