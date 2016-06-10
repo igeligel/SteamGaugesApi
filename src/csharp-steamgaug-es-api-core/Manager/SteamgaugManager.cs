@@ -202,6 +202,7 @@ namespace csharp_steamgaug_es_api_core.Manager
 
         public string GetSchema(Game game)
         {
+            updateResponseModel();
             if (game != Game.TeamFortress)
             {
                 throw new GameNotSupportedException();
@@ -211,6 +212,7 @@ namespace csharp_steamgaug_es_api_core.Manager
 
         public int GetSpyScore(Game game)
         {
+            updateResponseModel();
             if (game != Game.TeamFortress)
             {
                 throw new GameNotSupportedException();
@@ -223,6 +225,23 @@ namespace csharp_steamgaug_es_api_core.Manager
             else
             {
                 return spyScore.Value;
+            }
+        }
+
+        public int GetEngineScore(Game game)
+        {
+            if (game != Game.TeamFortress)
+            {
+                throw new GameNotSupportedException();
+            }
+            int? engiScore = _steamgaugResponseModel.SteamGameCoordinator["440"].Stats.EngiScore;
+            if (engiScore == null)
+            {
+                throw new SteamgaugOfflineException();
+            }
+            else
+            {
+                return engiScore.Value;
             }
         }
 
@@ -250,23 +269,6 @@ namespace csharp_steamgaug_es_api_core.Manager
             else
             {
                 return playersSearching.Value;
-            }
-        }
-
-        public int GetEngineScore(Game game)
-        {
-            if (game != Game.TeamFortress)
-            {
-                throw new GameNotSupportedException();
-            }
-            int? engiScore = _steamgaugResponseModel.SteamGameCoordinator["440"].Stats.EngiScore;
-            if (engiScore == null)
-            {
-                throw new SteamgaugOfflineException();
-            }
-            else
-            {
-                return engiScore.Value;
             }
         }
 
