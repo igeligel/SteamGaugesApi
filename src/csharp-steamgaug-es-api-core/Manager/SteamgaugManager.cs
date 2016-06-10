@@ -80,6 +80,27 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
         }
 
+        public bool IsGameCoordinatorOnline(Game game)
+        {
+            updateResponseModel();
+            if (game == Game.TeamFortress)
+            {
+                return IsOnline(_steamgaugResponseModel.SteamGameCoordinator["440"].Online);
+            }
+            else if (game == Game.CounterStrikeGlobalOffensive)
+            {
+                return IsOnline(_steamgaugResponseModel.SteamGameCoordinator["570"].Online);
+            }
+            else if (game == Game.DotaTwo)
+            {
+                return IsOnline(_steamgaugResponseModel.SteamGameCoordinator["730"].Online);
+            }
+            else
+            {
+                throw new GameNotSupportedException();
+            }
+        }
+
         public int SteamCommunityResponseTime()
         {
             updateResponseModel();
@@ -118,7 +139,7 @@ namespace csharp_steamgaug_es_api_core.Manager
                 throw new GameNotSupportedException();
             }
         }
-
+        
         public bool SteamCommunityHasError()
         {
             updateResponseModel();
