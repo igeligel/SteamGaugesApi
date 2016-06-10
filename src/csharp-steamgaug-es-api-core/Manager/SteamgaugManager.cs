@@ -74,7 +74,10 @@ namespace csharp_steamgaug_es_api_core.Manager
             {
                 return IsOnline(_steamgaugResponseModel.EconItems["730"].Online);
             }
-            return false;
+            else
+            {
+                throw new GameNotSupportedException();
+            }
         }
 
         public int SteamCommunityResponseTime()
@@ -95,7 +98,7 @@ namespace csharp_steamgaug_es_api_core.Manager
             return _steamgaugResponseModel.SteamUser.Time;
         }
 
-        public int? GetEconomyResponseTime(Game game)
+        public int GetEconomyResponseTime(Game game)
         {
             updateResponseModel();
             if (game == Game.TeamFortress)
@@ -110,7 +113,10 @@ namespace csharp_steamgaug_es_api_core.Manager
             {
                 return _steamgaugResponseModel.EconItems["730"].Online;
             }
-            return null;
+            else
+            {
+                throw new GameNotSupportedException();
+            }
         }
 
         public bool SteamCommunityHasError()
@@ -129,6 +135,27 @@ namespace csharp_steamgaug_es_api_core.Manager
         {
             updateResponseModel();
             return HasError(_steamgaugResponseModel.SteamUser.Error);
+        }
+
+        public bool EconomyHasError(Game game)
+        {
+            updateResponseModel();
+            if (game == Game.TeamFortress)
+            {
+                return HasError(_steamgaugResponseModel.EconItems["440"].Error);
+            }
+            else if (game == Game.CounterStrikeGlobalOffensive)
+            {
+                return HasError(_steamgaugResponseModel.EconItems["570"].Error);
+            }
+            else if (game == Game.DotaTwo)
+            {
+                return HasError(_steamgaugResponseModel.EconItems["730"].Error);
+            }
+            else
+            {
+                throw new GameNotSupportedException();
+            }
         }
 
         private bool IsOnline(int status)
