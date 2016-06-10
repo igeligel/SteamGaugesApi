@@ -306,6 +306,23 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
         }
 
+        public int GetServersAvailable(Game game)
+        {
+            if (game != Game.DotaTwo)
+            {
+                throw new GameNotSupportedException();
+            }
+            int? serversAvailable = _steamgaugResponseModel.SteamGameCoordinator["730"].Stats.ServersAvailable;
+            if (serversAvailable == null)
+            {
+                throw new SteamgaugOfflineException();
+            }
+            else
+            {
+                return serversAvailable.Value;
+            }
+        }
+
         private bool IsOnline(int status)
         {
             if (status == 1)
