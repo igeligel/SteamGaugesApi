@@ -7,6 +7,12 @@ using Newtonsoft.Json;
 
 namespace csharp_steamgaug_es_api_core.Manager
 {
+    /// <summary>
+    /// Singleton for managing steamgaug.es.
+    /// This is a singleton because we need this just once in the application.
+    /// Because of the singleton it has a cache variable to cache the response for not dosing the service.
+    /// Also the singleton is thread safe which is important because of the caching.
+    /// </summary>
     public sealed class SteamgaugesManager
     {
         private static volatile SteamgaugesManager instance;
@@ -19,6 +25,10 @@ namespace csharp_steamgaug_es_api_core.Manager
             
         }
 
+        /// <summary>
+        /// Instance of the Steamgauges manager.
+        /// </summary>
+        /// <returns>The instance of the singleton.</returns>
         public static SteamgaugesManager Instance
         {
             get
@@ -38,6 +48,20 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
         }
 
+        /// <summary>
+        /// Method to check if the steam client is online.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// bool steamClientIsOnline = SteamgaugesManager.Instance.IsSteamClientOnline();
+        /// </code>
+        /// </example>
+        /// <returns>
+        /// A boolean which describes the current status of the steam client.
+        /// It will return true if the steam client is online.
+        /// It will return false if the steam client is offline.
+        /// </returns>
         public bool IsSteamClientOnline()
         {
             updateResponseModel();
