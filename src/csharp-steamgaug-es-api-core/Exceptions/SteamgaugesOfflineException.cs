@@ -2,7 +2,7 @@ using System;
 
 namespace csharp_steamgaug_es_api_core.Exceptions
 {
-    public class SteamgaugOfflineException : Exception
+    public class SteamgaugesOfflineException : Exception
     {
     }
 }

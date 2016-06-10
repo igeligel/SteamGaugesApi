@@ -220,7 +220,7 @@ namespace csharp_steamgaug_es_api_core.Manager
             int? spyScore = _steamgaugResponseModel.SteamGameCoordinator["440"].Stats.SpyScore;
             if (spyScore == null)
             {
-                throw new SteamgaugOfflineException();
+                throw new SteamgaugesOfflineException();
             }
             else
             {
@@ -237,7 +237,7 @@ namespace csharp_steamgaug_es_api_core.Manager
             int? engiScore = _steamgaugResponseModel.SteamGameCoordinator["440"].Stats.EngiScore;
             if (engiScore == null)
             {
-                throw new SteamgaugOfflineException();
+                throw new SteamgaugesOfflineException();
             }
             else
             {
@@ -264,7 +264,7 @@ namespace csharp_steamgaug_es_api_core.Manager
 
             if (playersSearching == null)
             {
-                throw new SteamgaugOfflineException();
+                throw new SteamgaugesOfflineException();
             }
             else
             {
@@ -281,7 +281,7 @@ namespace csharp_steamgaug_es_api_core.Manager
             int? averageWaitTime = _steamgaugResponseModel.SteamGameCoordinator["730"].Stats.AverageWaitTime;
             if (averageWaitTime == null)
             {
-                throw new SteamgaugOfflineException();
+                throw new SteamgaugesOfflineException();
             }
             else
             {
@@ -298,7 +298,7 @@ namespace csharp_steamgaug_es_api_core.Manager
             int? onGoingMatches = _steamgaugResponseModel.SteamGameCoordinator["730"].Stats.OnGoingMatches;
             if (onGoingMatches == null)
             {
-                throw new SteamgaugOfflineException();
+                throw new SteamgaugesOfflineException();
             }
             else
             {
@@ -315,7 +315,7 @@ namespace csharp_steamgaug_es_api_core.Manager
             int? serversAvailable = _steamgaugResponseModel.SteamGameCoordinator["730"].Stats.ServersAvailable;
             if (serversAvailable == null)
             {
-                throw new SteamgaugOfflineException();
+                throw new SteamgaugesOfflineException();
             }
             else
             {
@@ -332,7 +332,7 @@ namespace csharp_steamgaug_es_api_core.Manager
             string menuUrl = _steamgaugResponseModel.SteamGameCoordinator["730"].Stats.MenuUrl;
             if (menuUrl == null)
             {
-                throw new SteamgaugOfflineException();
+                throw new SteamgaugesOfflineException();
             }
             else
             {
@@ -349,7 +349,7 @@ namespace csharp_steamgaug_es_api_core.Manager
             int? playersOnline = _steamgaugResponseModel.SteamGameCoordinator["730"].Stats.PlayersOnline;
             if (playersOnline == null)
             {
-                throw new SteamgaugOfflineException();
+                throw new SteamgaugesOfflineException();
             }
             else
             {
@@ -386,7 +386,7 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
             if (_steamgaugResponseModel == null)
             {
-                throw new SteamgaugOfflineException();
+                throw new SteamgaugesOfflineException();
             }
             _steamgaugResponseModel = steamgaugResponseModel;
         }
