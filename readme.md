@@ -1,5 +1,4 @@
 # csharp-steamgaug-es-api
-
 This is a .net core library for the API of [Steam Gauges](https://steamgaug.es/)
 
 ## Project
@@ -30,26 +29,24 @@ It will also enable you:
     - get the amount of players online
 
 ## Installation
-
 1. You need to install .net core. For instructions head over [here](https://www.microsoft.com/net/core).
 2. Open your CLI.
 3. Change directory to the package's source.
-4. 
+4.
    ```
    $ dotnet restore
    ```
-5. 
+5.
    ```
    $ dotnet build
    ```
 6. Reference your build like this:
    ```
    "csharp-steamgaug-es-api-core": "1.0.0-*"
-   ``` 
+   ```
    in your project.json file. For an example watch the [testing package](https://github.com/igeligel/csharp-steamgaug-es-api/blob/master/src/csharp-steamgaug-es-api-test/project.json).
 
 ## Used libraries
-
 | Library        | Usage        | Version |
 | ------------- | ------------- | ------- |
 | Newtonsoft.Json | A library for deserializing the json we are getting through the http response | 8.0.4-beta1 |
@@ -60,8 +57,11 @@ It will also enable you:
 - [igeligel](https://github.com/igeligel)
 
 ## Contact
+[![Steam](https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/16/steam-square.png "Steam Account") Steam](http://steamcommunity.com/profiles/76561198028630048/)
 
+[![Discord](http://i.imgur.com/wlwOQpl.png "Discord") Discord](https://discord.gg/011jg2foytc3w9NwX)
+
+[![Twitter](https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/16/twitter.png "Twitter") Twitter](https://twitter.com/kevinpeters_)
 
 ## License
-
 [MIT]()
