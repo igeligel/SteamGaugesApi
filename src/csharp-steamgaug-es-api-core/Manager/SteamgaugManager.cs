@@ -200,13 +200,31 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
         }
 
-        public int? GetSpyScore(Game game)
+        public string GetSchema(Game game)
         {
             if (game != Game.TeamFortress)
             {
                 throw new GameNotSupportedException();
             }
-            return _steamgaugResponseModel.SteamGameCoordinator["440"].Stats.SpyScore;
+            return _steamgaugResponseModel.SteamGameCoordinator["440"].Schema;
+        }
+
+        public int GetSpyScore(Game game)
+        {
+            if (game != Game.TeamFortress)
+            {
+                throw new GameNotSupportedException();
+            }
+            int? spyScore = _steamgaugResponseModel.SteamGameCoordinator["440"].Stats.SpyScore;
+            if (spyScore == null)
+            {
+                throw new SteamgaugOfflineException();
+            }
+            else
+            {
+                return spyScore.Value;
+            }
+            
         }
 
         private bool IsOnline(int status)
