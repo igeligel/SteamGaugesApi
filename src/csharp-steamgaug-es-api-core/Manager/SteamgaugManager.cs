@@ -226,6 +226,33 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
         }
 
+        public int GetPlayersSearching(Game game)
+        {
+            updateResponseModel();
+            int? playersSearching = null;
+            if (game == Game.TeamFortress)
+            {
+                throw new GameNotSupportedException();
+            }
+            else if (game == Game.CounterStrikeGlobalOffensive)
+            {
+                playersSearching = _steamgaugResponseModel.SteamGameCoordinator["570"].Stats.SpyScore;
+            }
+            else if (game == Game.DotaTwo)
+            {
+                playersSearching = _steamgaugResponseModel.SteamGameCoordinator["730"].Stats.SpyScore;
+            }
+
+            if (playersSearching == null)
+            {
+                throw new SteamgaugOfflineException();
+            }
+            else
+            {
+                return playersSearching.Value;
+            }
+        }
+
         public int GetEngineScore(Game game)
         {
             if (game != Game.TeamFortress)
