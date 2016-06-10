@@ -272,6 +272,40 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
         }
 
+        public int GetAverageWaitTime(Game game)
+        {
+            if (game != Game.DotaTwo)
+            {
+                throw new GameNotSupportedException();
+            }
+            int? averageWaitTime = _steamgaugResponseModel.SteamGameCoordinator["730"].Stats.AverageWaitTime;
+            if (averageWaitTime == null)
+            {
+                throw new SteamgaugOfflineException();
+            }
+            else
+            {
+                return averageWaitTime.Value;
+            }
+        }
+
+        public int GetOnGoingMatches(Game game)
+        {
+            if (game != Game.DotaTwo)
+            {
+                throw new GameNotSupportedException();
+            }
+            int? onGoingMatches = _steamgaugResponseModel.SteamGameCoordinator["730"].Stats.OnGoingMatches;
+            if (onGoingMatches == null)
+            {
+                throw new SteamgaugOfflineException();
+            }
+            else
+            {
+                return onGoingMatches.Value;
+            }
+        }
+
         private bool IsOnline(int status)
         {
             if (status == 1)
