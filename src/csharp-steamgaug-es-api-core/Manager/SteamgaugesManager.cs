@@ -174,7 +174,7 @@ namespace csharp_steamgaug_es_api_core.Manager
         /// bool gameCoordinatorOnline = SteamgaugesManager.Instance.IsGameCoordinatorOnline(Game.CounterStrikeGlobalOffensive);
         /// </code>
         /// </example>
-        /// <param name="game">Game which should be the economy checked for.</param>
+        /// <param name="game">Game which should be the game coordinator checked for.</param>
         /// <returns>
         /// A boolean which describes the current status of the game coordinator.
         /// It will return true if the steam economy is online.
@@ -264,7 +264,7 @@ namespace csharp_steamgaug_es_api_core.Manager
         /// int steamEconomyResponseTime = SteamgaugesManager.Instance.GetEconomyResponseTime(Game.CounterStrikeGlobalOffensive);
         /// </code>
         /// </example>
-        /// <param name="game">Game which should be the economy checked for.</param>
+        /// <param name="game">Game which should be the economy response time checked for.</param>
         /// <returns>
         /// An integer describing the time in milliseconds.
         /// </returns>
@@ -394,7 +394,7 @@ namespace csharp_steamgaug_es_api_core.Manager
         /// int errorAtCoordinator = SteamgaugesManager.Instance.GameCoordinatorHasError(Game.CounterStrikeGlobalOffensive);
         /// </code>
         /// </example>
-        /// <param name="game">Game which should be the economy checked for.</param>
+        /// <param name="game">Game which should be the game coordinator checked for.</param>
         /// <returns>
         /// A boolean which describes the if game coordinator has an error.
         /// It will return true if game coordinator has an error.
@@ -421,6 +421,17 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
         }
 
+        /// <summary>
+        /// Method to get the schema for a game. Actually it is just possible for Team Fortress.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// string urlToSchema = SteamgaugesManager.Instance.GetSchema(Game.TeamFortress);
+        /// </code>
+        /// </example>
+        /// <param name="game">Game which should be checked for a schema.</param>
+        /// <returns>The url to the schema.</returns>
         public string GetSchema(Game game)
         {
             updateResponseModel();
@@ -431,6 +442,17 @@ namespace csharp_steamgaug_es_api_core.Manager
             return _steamgaugResponseModel.SteamGameCoordinator["440"].Schema;
         }
 
+        /// <summary>
+        /// Method to get the spy score for a game. Actually it is just possible for Team Fortress.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// string urlToSchema = SteamgaugesManager.Instance.GetSpyScore(Game.TeamFortress);
+        /// </code>
+        /// </example>
+        /// <param name="game">Game which should be checked for the spy score.</param>
+        /// <returns>The spy score as integer.</returns>
         public int GetSpyScore(Game game)
         {
             updateResponseModel();
@@ -449,6 +471,17 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
         }
 
+        /// <summary>
+        /// Method to get the engine score for a game. Actually it is just possible for Team Fortress.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// string engineScore = SteamgaugesManager.Instance.GetEngineScore(Game.TeamFortress);
+        /// </code>
+        /// </example>
+        /// <param name="game">Game which should be checked for the engine score.</param>
+        /// <returns>The engine score as integer.</returns>
         public int GetEngineScore(Game game)
         {
             if (game != Game.TeamFortress)
@@ -466,6 +499,17 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
         }
 
+        /// <summary>
+        /// Method to get the amount of players searching in the game. This is not supported for Team Fortress 2.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// string playersSearchingDota = SteamgaugesManager.Instance.GetPlayersSearching(Game.DotaTwo);
+        /// </code>
+        /// </example>
+        /// <param name="game">Game which should be checked for the amount of players searching for a game.</param>
+        /// <returns>The number of players as integer.</returns>
         public int GetPlayersSearching(Game game)
         {
             updateResponseModel();
@@ -493,6 +537,17 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
         }
 
+        /// <summary>
+        /// Method to get the average wait game for searching for a match. This is just supported for Dota 2.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// string averageWaitTime = SteamgaugesManager.Instance.GetAverageWaitTime(Game.DotaTwo);
+        /// </code>
+        /// </example>
+        /// <param name="game">Game which should be checked for the average wait time.</param>
+        /// <returns>The average wait time as milliseconds.</returns>
         public int GetAverageWaitTime(Game game)
         {
             if (game != Game.DotaTwo)
