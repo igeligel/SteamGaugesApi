@@ -45,8 +45,10 @@ It will also enable you:
    ```
    "csharp-steamgaug-es-api-core": "1.0.0-*"
    ```
-   
+
    in your project.json file. For an example watch the [testing package](https://github.com/igeligel/csharp-steamgaug-es-api/blob/master/src/csharp-steamgaug-es-api-test/project.json).
+
+## Documentation
 
 ## Used libraries
 | Library        | Usage        | Version |
