@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using csharp_steamgaug_es_api_core.Exceptions;
 using csharp_steamgaug_es_api_core.Http;
 using csharp_steamgaug_es_api_core.Models.Enums;
@@ -397,8 +398,8 @@ namespace csharp_steamgaug_es_api_core.Manager
                 return playersOnline.Value;
             }
         }
-
-        private bool IsOnline(int status)
+        
+        internal bool IsOnline(int status)
         {
             if (status == 1)
             {
