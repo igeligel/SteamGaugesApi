@@ -109,12 +109,41 @@ namespace csharp_steamgaug_es_api_core.Manager
             return IsOnline(_steamgaugResponseModel.SteamStore.Online);
         }
 
+        /// <summary>
+        /// Method to check if the steam user interface is online.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// bool steamUserInterfaceOnline = SteamgaugesManager.Instance.IsSteamUserOnline();
+        /// </code>
+        /// </example>
+        /// <returns>
+        /// A boolean which describes the current status of the steam user interface.
+        /// It will return true if the steam user interface is online.
+        /// It will return false if the steam user interface is offline.
+        /// </returns>
         public bool IsSteamUserOnline()
         {
             updateResponseModel();
             return IsOnline(_steamgaugResponseModel.SteamUser.Online);
         }
 
+        /// <summary>
+        /// Method to check if the steam economy is online.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// bool steamEconomyOnline = SteamgaugesManager.Instance.IsEconomyOnline(Game.CounterStrikeGlobalOffensive);
+        /// </code>
+        /// </example>
+        /// <param name="game">Game which should be the economy checked for.</param>
+        /// <returns>
+        /// A boolean which describes the current status of the steam economy.
+        /// It will return true if the steam economy is online.
+        /// It will return false if the steam economy is offline.
+        /// </returns>
         public bool IsEconomyOnline(Game game)
         {
             updateResponseModel();
@@ -136,6 +165,21 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
         }
 
+        /// <summary>
+        /// Method to check if the steam game coordinator is online.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// bool gameCoordinatorOnline = SteamgaugesManager.Instance.IsGameCoordinatorOnline(Game.CounterStrikeGlobalOffensive);
+        /// </code>
+        /// </example>
+        /// <param name="game">Game which should be the economy checked for.</param>
+        /// <returns>
+        /// A boolean which describes the current status of the game coordinator.
+        /// It will return true if the steam economy is online.
+        /// It will return false if the steam economy is offline.
+        /// </returns>
         public bool IsGameCoordinatorOnline(Game game)
         {
             updateResponseModel();
@@ -157,24 +201,73 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
         }
 
+        /// <summary>
+        /// Method to get the response time of the steam community.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// int steamCommunityResponseTime = SteamgaugesManager.Instance.SteamCommunityResponseTime();
+        /// </code>
+        /// </example>
+        /// <returns>
+        /// An integer describing the time in milliseconds.
+        /// </returns>
         public int SteamCommunityResponseTime()
         {
             updateResponseModel();
             return _steamgaugResponseModel.SteamCommunity.Time;
         }
 
+        /// <summary>
+        /// Method to get the response time of the steam store.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// int steamStoreResponseTime = SteamgaugesManager.Instance.SteamStoreResponseTime();
+        /// </code>
+        /// </example>
+        /// <returns>
+        /// An integer describing the time in milliseconds.
+        /// </returns>
         public int SteamStoreResponseTime()
         {
             updateResponseModel();
             return _steamgaugResponseModel.SteamStore.Time;
         }
 
+        /// <summary>
+        /// Method to get the response time of the steam user inteface.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// int steamUserResponseTime = SteamgaugesManager.Instance.SteamUserResponseTime();
+        /// </code>
+        /// </example>
+        /// <returns>
+        /// An integer describing the time in milliseconds.
+        /// </returns>
         public int SteamUserResponseTime()
         {
             updateResponseModel();
             return _steamgaugResponseModel.SteamUser.Time;
         }
 
+        /// <summary>
+        /// Method to get the response time of the steam economy.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// int steamEconomyResponseTime = SteamgaugesManager.Instance.GetEconomyResponseTime(Game.CounterStrikeGlobalOffensive);
+        /// </code>
+        /// </example>
+        /// <param name="game">Game which should be the economy checked for.</param>
+        /// <returns>
+        /// An integer describing the time in milliseconds.
+        /// </returns>
         public int GetEconomyResponseTime(Game game)
         {
             updateResponseModel();
@@ -195,25 +288,82 @@ namespace csharp_steamgaug_es_api_core.Manager
                 throw new GameNotSupportedException();
             }
         }
-        
+
+        /// <summary>
+        /// Method to check if the steam community has an error.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// int errorAtSteamCommunity = SteamgaugesManager.Instance.SteamCommunityHasError();
+        /// </code>
+        /// </example>
+        /// <returns>
+        /// A boolean which describes the if steam community has an error.
+        /// It will return true if the steam community has an error.
+        /// It will return false if the steam community has no error.
+        /// </returns>
         public bool SteamCommunityHasError()
         {
             updateResponseModel();
             return HasError(_steamgaugResponseModel.SteamCommunity.Error);
         }
-        
+
+        /// <summary>
+        /// Method to check if the steam store has an error.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// int errorAtSteamStore = SteamgaugesManager.Instance.SteamStoreHasError();
+        /// </code>
+        /// </example>
+        /// <returns>
+        /// A boolean which describes the if steam store has an error.
+        /// It will return true if the steam store has an error.
+        /// It will return false if the steam store has no error.
+        /// </returns>
         public bool SteamStoreHasError()
         {
             updateResponseModel();
             return HasError(_steamgaugResponseModel.SteamStore.Error);
         }
 
+        /// <summary>
+        /// Method to check if the steam user interface has an error.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// int errorAtSteamUser = SteamgaugesManager.Instance.SteamUserHasError();
+        /// </code>
+        /// </example>
+        /// <returns>
+        /// A boolean which describes the if steam user interface has an error.
+        /// It will return true if the steam user interface has an error.
+        /// It will return false if the steam user interface has no error.
+        /// </returns>
         public bool SteamUserHasError()
         {
             updateResponseModel();
             return HasError(_steamgaugResponseModel.SteamUser.Error);
         }
 
+        /// <summary>
+        /// Method to check if the steam economy has an error.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// int errorAtEconomy = SteamgaugesManager.Instance.EconomyHasError(Game.CounterStrikeGlobalOffensive);
+        /// </code>
+        /// </example>
+        /// <param name="game">Game which should be the economy checked for.</param>
+        /// <returns>
+        /// A boolean which describes the if steam economy has an error.
+        /// It will return true if the steam economy has an error.
+        /// It will return false if the steam economy has no error.
+        /// </returns>
         public bool EconomyHasError(Game game)
         {
             updateResponseModel();
@@ -235,6 +385,21 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
         }
 
+        /// <summary>
+        /// Method to check if the game coordinator has an error.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// int errorAtCoordinator = SteamgaugesManager.Instance.GameCoordinatorHasError(Game.CounterStrikeGlobalOffensive);
+        /// </code>
+        /// </example>
+        /// <param name="game">Game which should be the economy checked for.</param>
+        /// <returns>
+        /// A boolean which describes the if game coordinator has an error.
+        /// It will return true if game coordinator has an error.
+        /// It will return false if the game coordinator has no error.
+        /// </returns>
         public bool GameCoordinatorHasError(Game game)
         {
             updateResponseModel();
