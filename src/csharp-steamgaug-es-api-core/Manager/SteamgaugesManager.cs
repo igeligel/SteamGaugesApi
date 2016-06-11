@@ -89,6 +89,20 @@ namespace csharp_steamgaug_es_api_core.Manager
             return IsOnline(_steamgaugResponseModel.SteamCommunity.Online);
         }
 
+        /// <summary>
+        /// Method to check if the steam store is online.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// bool steamStoreIsOnline = SteamgaugesManager.Instance.IsSteamStoreOnline();
+        /// </code>
+        /// </example>
+        /// <returns>
+        /// A boolean which describes the current status of the steam store.
+        /// It will return true if the steam store is online.
+        /// It will return false if the steam store is offline.
+        /// </returns>
         public bool IsSteamStoreOnline()
         {
             updateResponseModel();
