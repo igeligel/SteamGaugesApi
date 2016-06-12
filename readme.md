@@ -518,4 +518,4 @@ int playersOnline = SteamgaugesManager
 [![Twitter](https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/16/twitter.png "Twitter") Twitter](https://twitter.com/kevinpeters_)
 
 ## License
-[MIT]()
+[MIT](LICENSE)
