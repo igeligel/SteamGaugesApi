@@ -63,6 +63,12 @@ SteamgaugesManager.Instance.IsSteamCommunityOnline();
 
 ### IsSteamClientOnline()
 Method to check if the steam client is online.
+
+This method will **return**:
+A boolean which describes the current status of the steam client.
+It will return true if the steam client is online.
+It will return false if the steam client is offline.
+
 *Example*:
 ```csharp
 bool steamClientOnline = SteamgaugesManager.Instance.IsSteamClientOnline();
