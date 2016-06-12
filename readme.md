@@ -50,6 +50,24 @@ It will also enable you:
 
 ## Documentation
 
+### General information
+There is one service which should be used. This service is:
+```csharp
+SteamgaugesManager
+```
+
+Because this is a singleton you need to grab the instance and then call the methods like:
+```csharp
+SteamgaugesManager.Instance.IsSteamCommunityOnline();
+```
+
+### IsSteamClientOnline()
+Method to check if the steam client is online.
+*Example*:
+```csharp
+bool steamClientOnline = SteamgaugesManager.Instance.IsSteamClientOnline();
+```
+
 ## Used libraries
 | Library        | Usage        | Version |
 | ------------- | ------------- | ------- |
