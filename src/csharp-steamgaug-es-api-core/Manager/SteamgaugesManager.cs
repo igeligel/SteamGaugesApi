@@ -448,7 +448,7 @@ namespace csharp_steamgaug_es_api_core.Manager
         /// <example>
         /// This is how to use the code:
         /// <code>
-        /// int urlToSchema = SteamgaugesManager.Instance.GetSpyScore(Game.TeamFortress);
+        /// int spyScore = SteamgaugesManager.Instance.GetSpyScore(Game.TeamFortress);
         /// </code>
         /// </example>
         /// <param name="game">Game which should be checked for the spy score.</param>
