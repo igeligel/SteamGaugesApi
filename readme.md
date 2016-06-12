@@ -122,7 +122,7 @@ It will return false if the steam user interface is offline.
 bool steamUserInterfaceOnline = SteamgaugesManager.Instance.IsSteamUserOnline();
 ```
 
-### **IsEconomyOnline()**
+### **IsEconomyOnline(Game game)**
 **Description**
 > Method to check if the steam economy is online.
 
@@ -144,7 +144,7 @@ bool csgoEconomyOnline = SteamgaugesManager
     .IsEconomyOnline(Game.CounterStrikeGlobalOffensive);
 ```
 
-### **IsGameCoordinatorOnline()**
+### **IsGameCoordinatorOnline(Game game)**
 **Description**
 > Method to check if the steam game coordinator is online.
 
@@ -208,7 +208,7 @@ int steamUserResponseTime = SteamgaugesManager
     .SteamUserResponseTime();
 ```
 
-### **GetEconomyResponseTime()**
+### **GetEconomyResponseTime(Game game)**
 **Description**
 > Method to get the response time of the steam economy.
 
@@ -223,9 +223,101 @@ int steamUserResponseTime = SteamgaugesManager
 
 *Example*:
 ```csharp
-int steamUserResponseTime = SteamgaugesManager
+int steamEconomyResponseTime = SteamgaugesManager
     .Instance
     .GetEconomyResponseTime(Game.CounterStrikeGlobalOffensive);
+```
+
+### **SteamCommunityHasError()**
+**Description**
+> Method to check if the steam community has an error.
+
+**return**
+> A boolean which describes the if steam community has an error.
+It will return true if the steam community has an error.
+It will return false if the steam community has no error.
+
+*Example*:
+```csharp
+bool errorAtSteamCommunity = SteamgaugesManager
+    .Instance
+    .SteamCommunityHasError();
+```
+
+### **SteamStoreHasError()**
+**Description**
+> Method to check if the steam store has an error.
+
+**return**
+> A boolean which describes the if steam store has an error.
+It will return true if the steam store has an error.
+It will return false if the steam store has no error.
+
+*Example*:
+```csharp
+bool errorAtSteamStore = SteamgaugesManager
+    .Instance
+    .SteamStoreHasError();
+```
+
+### **SteamUserHasError()**
+**Description**
+> Method to check if the steam user interface has an error.
+
+**return**
+> A boolean which describes the if steam user interface has an error.
+It will return true if the steam user interface has an error.
+It will return false if the steam user interface has no error.
+
+*Example*:
+```csharp
+bool errorAtSteamUser = SteamgaugesManager
+    .Instance
+    .SteamUserHasError();
+```
+
+### **EconomyHasError(Game game)**
+**Description**
+> Method to check if the steam economy has an error.
+
+**Parameter**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| game | Game | Game which should be the economy checked for. |
+
+**return**
+> A boolean which describes the if steam economy has an error.
+It will return true if the steam economy has an error.
+It will return false if the steam economy has no error.
+
+*Example*:
+```csharp
+bool errorAtEconomy = SteamgaugesManager
+    .Instance
+    .EconomyHasError(Game.CounterStrikeGlobalOffensive);
+```
+
+### **GameCoordinatorHasError(Game game)**
+**Description**
+> Method to check if the game coordinator has an error.
+
+**Parameter**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| game | Game | Game which should be the game coordinator checked for. |
+
+**return**
+> A boolean which describes the if game coordinator has an error.
+It will return true if game coordinator has an error.
+It will return false if the game coordinator has no error.
+
+*Example*:
+```csharp
+bool errorAtCoordinator = SteamgaugesManager
+    .Instance
+    .GameCoordinatorHasError(Game.CounterStrikeGlobalOffensive);
 ```
 
 ## Used libraries
