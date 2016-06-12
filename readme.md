@@ -166,6 +166,68 @@ bool gameCoordinatorOnline = SteamgaugesManager
     .IsGameCoordinatorOnline(Game.CounterStrikeGlobalOffensive);
 ```
 
+### **SteamCommunityResponseTime()**
+**Description**
+> Method to get the response time of the steam community.
+
+**return**
+> An integer describing the time in milliseconds.
+
+*Example*:
+```csharp
+int steamCommunityResponseTime = SteamgaugesManager
+    .Instance
+    .SteamCommunityResponseTime();
+```
+
+### **SteamStoreResponseTime()**
+**Description**
+> Method to get the response time of the steam store.
+
+**return**
+> An integer describing the time in milliseconds.
+
+*Example*:
+```csharp
+int steamStoreResponseTime = SteamgaugesManager
+    .Instance
+    .SteamStoreResponseTime();
+```
+
+### **SteamUserResponseTime()**
+**Description**
+> Method to get the response time of the steam user inteface.
+
+**return**
+> An integer describing the time in milliseconds.
+
+*Example*:
+```csharp
+int steamUserResponseTime = SteamgaugesManager
+    .Instance
+    .SteamUserResponseTime();
+```
+
+### **GetEconomyResponseTime()**
+**Description**
+> Method to get the response time of the steam economy.
+
+**Parameter**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| game | Game | Game which should be the economy response time checked for. |
+
+**return**
+> An integer describing the time in milliseconds.
+
+*Example*:
+```csharp
+int steamUserResponseTime = SteamgaugesManager
+    .Instance
+    .GetEconomyResponseTime(Game.CounterStrikeGlobalOffensive);
+```
+
 ## Used libraries
 | Library        | Usage        | Version |
 | ------------- | ------------- | ------- |
