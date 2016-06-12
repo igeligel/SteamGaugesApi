@@ -295,7 +295,7 @@ namespace csharp_steamgaug_es_api_core.Manager
         /// <example>
         /// This is how to use the code:
         /// <code>
-        /// int errorAtSteamCommunity = SteamgaugesManager.Instance.SteamCommunityHasError();
+        /// bool errorAtSteamCommunity = SteamgaugesManager.Instance.SteamCommunityHasError();
         /// </code>
         /// </example>
         /// <returns>
@@ -315,7 +315,7 @@ namespace csharp_steamgaug_es_api_core.Manager
         /// <example>
         /// This is how to use the code:
         /// <code>
-        /// int errorAtSteamStore = SteamgaugesManager.Instance.SteamStoreHasError();
+        /// bool errorAtSteamStore = SteamgaugesManager.Instance.SteamStoreHasError();
         /// </code>
         /// </example>
         /// <returns>
@@ -335,7 +335,7 @@ namespace csharp_steamgaug_es_api_core.Manager
         /// <example>
         /// This is how to use the code:
         /// <code>
-        /// int errorAtSteamUser = SteamgaugesManager.Instance.SteamUserHasError();
+        /// bool errorAtSteamUser = SteamgaugesManager.Instance.SteamUserHasError();
         /// </code>
         /// </example>
         /// <returns>
@@ -355,7 +355,7 @@ namespace csharp_steamgaug_es_api_core.Manager
         /// <example>
         /// This is how to use the code:
         /// <code>
-        /// int errorAtEconomy = SteamgaugesManager.Instance.EconomyHasError(Game.CounterStrikeGlobalOffensive);
+        /// bool errorAtEconomy = SteamgaugesManager.Instance.EconomyHasError(Game.CounterStrikeGlobalOffensive);
         /// </code>
         /// </example>
         /// <param name="game">Game which should be the economy checked for.</param>
@@ -391,7 +391,7 @@ namespace csharp_steamgaug_es_api_core.Manager
         /// <example>
         /// This is how to use the code:
         /// <code>
-        /// int errorAtCoordinator = SteamgaugesManager.Instance.GameCoordinatorHasError(Game.CounterStrikeGlobalOffensive);
+        /// bool errorAtCoordinator = SteamgaugesManager.Instance.GameCoordinatorHasError(Game.CounterStrikeGlobalOffensive);
         /// </code>
         /// </example>
         /// <param name="game">Game which should be the game coordinator checked for.</param>
@@ -448,7 +448,7 @@ namespace csharp_steamgaug_es_api_core.Manager
         /// <example>
         /// This is how to use the code:
         /// <code>
-        /// string urlToSchema = SteamgaugesManager.Instance.GetSpyScore(Game.TeamFortress);
+        /// int urlToSchema = SteamgaugesManager.Instance.GetSpyScore(Game.TeamFortress);
         /// </code>
         /// </example>
         /// <param name="game">Game which should be checked for the spy score.</param>
@@ -477,7 +477,7 @@ namespace csharp_steamgaug_es_api_core.Manager
         /// <example>
         /// This is how to use the code:
         /// <code>
-        /// string engineScore = SteamgaugesManager.Instance.GetEngineScore(Game.TeamFortress);
+        /// int engineScore = SteamgaugesManager.Instance.GetEngineScore(Game.TeamFortress);
         /// </code>
         /// </example>
         /// <param name="game">Game which should be checked for the engine score.</param>
@@ -505,7 +505,7 @@ namespace csharp_steamgaug_es_api_core.Manager
         /// <example>
         /// This is how to use the code:
         /// <code>
-        /// string playersSearchingDota = SteamgaugesManager.Instance.GetPlayersSearching(Game.DotaTwo);
+        /// int playersSearchingDota = SteamgaugesManager.Instance.GetPlayersSearching(Game.DotaTwo);
         /// </code>
         /// </example>
         /// <param name="game">Game which should be checked for the amount of players searching for a game.</param>
@@ -543,7 +543,7 @@ namespace csharp_steamgaug_es_api_core.Manager
         /// <example>
         /// This is how to use the code:
         /// <code>
-        /// string averageWaitTime = SteamgaugesManager.Instance.GetAverageWaitTime(Game.DotaTwo);
+        /// int averageWaitTime = SteamgaugesManager.Instance.GetAverageWaitTime(Game.DotaTwo);
         /// </code>
         /// </example>
         /// <param name="game">Game which should be checked for the average wait time.</param>
@@ -565,6 +565,17 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
         }
 
+        /// <summary>
+        /// Method to get the amount of on going matches for a game. This method will just work for Dota 2.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// int onGoingMatches = SteamgaugesManager.Instance.GetOnGoingMatches(Game.DotaTwo);
+        /// </code>
+        /// </example>
+        /// <param name="game">Game which should be checked for the amount of on going matches.</param>
+        /// <returns>An integer of the amount of matches.</returns>
         public int GetOnGoingMatches(Game game)
         {
             if (game != Game.DotaTwo)
@@ -582,6 +593,17 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
         }
 
+        /// <summary>
+        /// Method to get the amount of servers available for a game. This method will just work for Dota 2.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// int serversAvailable = SteamgaugesManager.Instance.GetServersAvailable(Game.DotaTwo);
+        /// </code>
+        /// </example>
+        /// <param name="game">Game which should be checked for the amount of servers available.</param>
+        /// <returns>An integer of the amount of free servers.</returns>
         public int GetServersAvailable(Game game)
         {
             if (game != Game.DotaTwo)
@@ -599,6 +621,17 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
         }
 
+        /// <summary>
+        /// Method to get the menu url of a game. This method will just work for Dota 2.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// string menuUrl = SteamgaugesManager.Instance.GetMenuUrl(Game.DotaTwo);
+        /// </code>
+        /// </example>
+        /// <param name="game">Game which should be checked for the menu url.</param>
+        /// <returns>The url of the menu as string.</returns>
         public string GetMenuUrl(Game game)
         {
             if (game != Game.DotaTwo)
@@ -616,6 +649,17 @@ namespace csharp_steamgaug_es_api_core.Manager
             }
         }
 
+        /// <summary>
+        /// Method to get the players online. This method will just work for Dota 2.
+        /// </summary>
+        /// <example>
+        /// This is how to use the code:
+        /// <code>
+        /// int playersOnline = SteamgaugesManager.Instance.GetPlayersOnline(Game.DotaTwo);
+        /// </code>
+        /// </example>
+        /// <param name="game">Game which should be checked for the amount of players which are online.</param>
+        /// <returns>The amount of online players as integer.</returns>
         public int GetPlayersOnline(Game game)
         {
             if (game != Game.DotaTwo)
