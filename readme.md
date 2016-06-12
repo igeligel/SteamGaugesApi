@@ -320,6 +320,186 @@ bool errorAtCoordinator = SteamgaugesManager
     .GameCoordinatorHasError(Game.CounterStrikeGlobalOffensive);
 ```
 
+### **GetSchema(Game game)**
+**Description**
+> Method to get the schema for a game. Actually it is just possible for Team Fortress.
+
+**Parameter**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| game | Game | Game which should be checked for a schema. |
+
+**return**
+> The url to the schema.
+
+*Example*:
+```csharp
+string urlToSchema = SteamgaugesManager
+    .Instance
+    .GetSchema(Game.TeamFortress);
+```
+
+### **GetSpyScore(Game game)**
+**Description**
+> Method to get the spy score for a game. Actually it is just possible for Team Fortress.
+
+**Parameter**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| game | Game | Game which should be checked for the spy score. |
+
+**return**
+> The spy score as integer.
+
+*Example*:
+```csharp
+int spyScore = SteamgaugesManager
+    .Instance
+    .GetSpyScore(Game.TeamFortress);
+```
+
+### **GetEngineScore(Game game)**
+**Description**
+> Method to get the engine score for a game. Actually it is just possible for Team Fortress.
+
+**Parameter**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| game | Game | Game which should be checked for the engine score. |
+
+**return**
+> The engine score as integer.
+
+*Example*:
+```csharp
+int engineScore = SteamgaugesManager
+    .Instance
+    .GetSpyScore(Game.TeamFortress);
+```
+
+### **GetPlayersSearching(Game game)**
+**Description**
+> Method to get the amount of players searching in the game. This is not supported for Team Fortress 2.
+
+**Parameter**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| game | Game | Game which should be checked for the amount of players searching for a game. |
+
+**return**
+> The number of players as integer.
+
+*Example*:
+```csharp
+int playersSearchingDota = SteamgaugesManager
+    .Instance
+    .GetPlayersSearching(Game.DotaTwo);
+```
+
+### **GetAverageWaitTime(Game game)**
+**Description**
+> Method to get the average wait game for searching for a match. This is just supported for Dota 2.
+
+**Parameter**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| game | Game | Game which should be checked for the average wait time. |
+
+**return**
+> The average wait time as milliseconds.
+
+*Example*:
+```csharp
+int averageWaitTime = SteamgaugesManager
+    .Instance
+    .GetAverageWaitTime(Game.DotaTwo);
+```
+
+### **GetOnGoingMatches(Game game)**
+**Description**
+> Method to get the amount of on going matches for a game. This method will just work for Dota 2.
+
+**Parameter**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| game | Game | Game which should be checked for the amount of on going matches. |
+
+**return**
+> An integer of the amount of matches.
+
+*Example*:
+```csharp
+int onGoingMatches = SteamgaugesManager
+    .Instance
+    .GetOnGoingMatches(Game.DotaTwo);
+```
+
+### **GetServersAvailable(Game game)**
+**Description**
+> Method to get the amount of servers available for a game. This method will just work for Dota 2.
+
+**Parameter**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| game | Game | Game which should be checked for the amount of servers available. |
+
+**return**
+> An integer of the amount of free servers.
+
+*Example*:
+```csharp
+int serversAvailable = SteamgaugesManager
+    .Instance
+    .GetServersAvailable(Game.DotaTwo);
+```
+
+### **GetMenuUrl(Game game)**
+**Description**
+> Method to get the menu url of a game. This method will just work for Dota 2.
+
+**Parameter**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| game | Game | Game which should be checked for the menu url. |
+
+**return**
+> The url of the menu as string.
+
+*Example*:
+```csharp
+string menuUrl = SteamgaugesManager
+    .Instance
+    .GetMenuUrl(Game.DotaTwo);
+```
+
+### **GetPlayersOnline(Game game)**
+**Description**
+> Method to get the players online. This method will just work for Dota 2.
+
+**Parameter**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| game | Game | Game which should be checked for the amount of players which are online. |
+
+**return**
+> The amount of online players as integer.
+
+*Example*:
+```csharp
+int playersOnline = SteamgaugesManager
+    .Instance
+    .GetPlayersOnline(Game.DotaTwo);
+```
+
 ## Used libraries
 | Library        | Usage        | Version |
 | ------------- | ------------- | ------- |
