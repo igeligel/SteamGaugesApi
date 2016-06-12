@@ -61,7 +61,12 @@ Because this is a singleton you need to grab the instance and then call the meth
 SteamgaugesManager.Instance.IsSteamCommunityOnline();
 ```
 
-### IsSteamClientOnline()
+Also there is an enum which is describing games. These games are:
+- Team Fortress 2
+- Counter-Strike: Global Offensive
+- Dota 2
+
+### **IsSteamClientOnline()**
 **Description**
 > Method to check if the steam client is online.
 
@@ -75,7 +80,7 @@ It will return false if the steam client is offline.
 bool steamClientOnline = SteamgaugesManager.Instance.IsSteamClientOnline();
 ```
 
-### IsSteamCommunityOnline()
+### **IsSteamCommunityOnline()**
 **Description**
 > Method to check if the steam community is online.
 
@@ -89,7 +94,7 @@ It will return false if the steam community is offline.
 bool steamCommunityIsOnline = SteamgaugesManager.Instance.IsSteamCommunityOnline();
 ```
 
-### IsSteamStoreOnline()
+### **IsSteamStoreOnline()**
 **Description**
 > Method to check if the steam store is online.
 
@@ -101,6 +106,64 @@ It will return false if the steam store is offline.
 *Example*:
 ```csharp
 bool steamStoreIsOnline = SteamgaugesManager.Instance.IsSteamStoreOnline();
+```
+
+### **IsSteamUserOnline()**
+**Description**
+> Method to check if the steam user interface is online.
+
+**return**
+> A boolean which describes the current status of the steam user interface.
+It will return true if the steam user interface is online.
+It will return false if the steam user interface is offline.
+
+*Example*:
+```csharp
+bool steamUserInterfaceOnline = SteamgaugesManager.Instance.IsSteamUserOnline();
+```
+
+### **IsEconomyOnline()**
+**Description**
+> Method to check if the steam economy is online.
+
+**Parameter**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| game | Game | Game which should be checked for the economy status. |
+
+**return**
+> A boolean which describes the current status of the steam economy.
+It will return true if the steam economy is online.
+It will return false if the steam economy is offline.
+
+*Example*:
+```csharp
+bool csgoEconomyOnline = SteamgaugesManager
+    .Instance
+    .IsEconomyOnline(Game.CounterStrikeGlobalOffensive);
+```
+
+### **IsGameCoordinatorOnline()**
+**Description**
+> Method to check if the steam game coordinator is online.
+
+**Parameter**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| game | Game | Game which should be the game coordinator checked for. |
+
+**return**
+> A boolean which describes the current status of the game coordinator.
+It will return true if the game coordinator is online.
+It will return false if the game coordinator is offline.
+
+*Example*:
+```csharp
+bool gameCoordinatorOnline = SteamgaugesManager
+    .Instance
+    .IsGameCoordinatorOnline(Game.CounterStrikeGlobalOffensive);
 ```
 
 ## Used libraries
