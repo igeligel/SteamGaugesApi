@@ -75,6 +75,34 @@ It will return false if the steam client is offline.
 bool steamClientOnline = SteamgaugesManager.Instance.IsSteamClientOnline();
 ```
 
+### IsSteamCommunityOnline()
+**Description**
+> Method to check if the steam community is online.
+
+**return**
+> A boolean which describes the current status of the steam community.
+It will return true if the steam community is online.
+It will return false if the steam community is offline.
+
+*Example*:
+```csharp
+bool steamCommunityIsOnline = SteamgaugesManager.Instance.IsSteamCommunityOnline();
+```
+
+### IsSteamStoreOnline()
+**Description**
+> Method to check if the steam store is online.
+
+**return**
+> A boolean which describes the current status of the steam store.
+It will return true if the steam store is online.
+It will return false if the steam store is offline.
+
+*Example*:
+```csharp
+bool steamStoreIsOnline = SteamgaugesManager.Instance.IsSteamStoreOnline();
+```
+
 ## Used libraries
 | Library        | Usage        | Version |
 | ------------- | ------------- | ------- |
