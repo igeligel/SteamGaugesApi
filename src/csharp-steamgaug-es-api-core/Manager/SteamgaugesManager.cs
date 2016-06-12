@@ -135,10 +135,10 @@ namespace csharp_steamgaug_es_api_core.Manager
         /// <example>
         /// This is how to use the code:
         /// <code>
-        /// bool steamEconomyOnline = SteamgaugesManager.Instance.IsEconomyOnline(Game.CounterStrikeGlobalOffensive);
+        /// bool csgoEconomyOnline = SteamgaugesManager.Instance.IsEconomyOnline(Game.CounterStrikeGlobalOffensive);
         /// </code>
         /// </example>
-        /// <param name="game">Game which should be the economy checked for.</param>
+        /// <param name="game">Game which should be checked for the economy status.</param>
         /// <returns>
         /// A boolean which describes the current status of the steam economy.
         /// It will return true if the steam economy is online.
@@ -177,8 +177,8 @@ namespace csharp_steamgaug_es_api_core.Manager
         /// <param name="game">Game which should be the game coordinator checked for.</param>
         /// <returns>
         /// A boolean which describes the current status of the game coordinator.
-        /// It will return true if the steam economy is online.
-        /// It will return false if the steam economy is offline.
+        /// It will return true if the game coordinator is online.
+        /// It will return false if the game coordinator is offline.
         /// </returns>
         public bool IsGameCoordinatorOnline(Game game)
         {
