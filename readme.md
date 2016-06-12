@@ -507,6 +507,12 @@ int playersOnline = SteamgaugesManager
 
 ## Contribute
 
+You should always make an issue before changing something. I will check the issue and after that i will ask for a pull request.
+
+For pull request please respect this coding style guidelines and this commit style guideline:
+- [C# Style Guideline](https://github.com/igeligel/contributing-template/blob/master/code-style/csharp.md)
+- [Commit Style Guideline](https://github.com/igeligel/contributing-template/blob/master/commits.md)
+
 ## Authors
 - [igeligel](https://github.com/igeligel)
 
