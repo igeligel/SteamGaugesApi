@@ -18,3 +18,6 @@ before_build:
     cd .\src\csharp-steamgaug-es-api-core\
 
     dotnet restore
+
+build:
+    project: src\csharp-steamgaug-es-api-core\csharp-steamgaug-es-api-console.sln
