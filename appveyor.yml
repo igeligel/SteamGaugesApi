@@ -1,7 +1,7 @@
 version: 1.4.0.{build}
-os: Visual Studio 2015
-configuration: Debug
-platform: Any CPU
+
+pull_requests:  
+  do_not_increment_build_number: true
 
 branches:
   only:
@@ -15,9 +15,7 @@ before_build:
 
     core.exe /install /quiet /norestart
 
-    cd .\src\csharp-steamgaug-es-api-core\
+build_script:  
+- ps: .\Build.ps1
 
-    dotnet restore
-
-build:
-    project: src\csharp-steamgaug-es-api-core\csharp-steamgaug-es-api-core.xproj
+test: off
