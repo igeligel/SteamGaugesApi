@@ -9,3 +9,5 @@ install:
 build_script:
 - cmd: >-
     cd src\csharp-steamgaug-es-api-core\
+    dotnet restore
+    dotnet build
