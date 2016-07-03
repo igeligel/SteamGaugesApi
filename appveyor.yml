@@ -8,7 +8,4 @@ install:
     7z x dotnet-dev-win-x64.latest.zip -aoa -oC:\projects\csharp-steamgaug-es-api\
 build_script:
 - cmd: >-
-    cd C:\projects\csharp-steamgaug-es-api\
-    ls
-    dotnet restore
-    dotnet pack
+    cd src\csharp-steamgaug-es-api-core\
