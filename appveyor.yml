@@ -1,0 +1,13 @@
+version: 1.0.{build}
+install:
+- cmd: >-
+    curl -fsSL -o dotnet-dev-win-x64.latest.zip 'https://dotnetcli.blob.core.windows.net/dotnet/beta/Binaries/Latest/dotnet-dev-win-x64.latest.zip'
+    
+    endlocal
+    
+    7z x dotnet-dev-win-x64.latest.zip -aoa -oC:\projects\csharp-steamgaug-es-api\
+build_script:
+- cmd: >-
+    cd C:\projects\csharp-steamgaug-es-api\src\csharp-steamgaug-es-api-core\
+    dotnet restore
+    dotnet pack
