@@ -58,9 +58,9 @@ EnsurePsbuildInstalled
 exec { & dotnet restore }
 
 Invoke-MSBuild
-
+<#
 $revision = @{ $true = $env:APPVEYOR_BUILD_NUMBER; $false = 1 }[$env:APPVEYOR_BUILD_NUMBER -ne $NULL];
-$revision = "{0:D4}" -f [convert]::ToInt32($revision, 10)
+$revision = "{0:D4}" -f [convert]::ToInt32($revision, 10)#>
 
 exec { & dotnet test ..\csharp-steamgaug-es-api-test\ }
 <# -c release normally #>
