@@ -64,6 +64,8 @@ $revision = "{0:D4}" -f [convert]::ToInt32($revision, 10)
 
 cd ..\csharp-steamgaug-es-api-test\
 
+dotnet restore
+
 exec { & dotnet test }
 <# -c release normally #>
 <# exec { & dotnet pack .\src\MediatR -c Release -o .\artifacts --version-suffix=$revision } #>
