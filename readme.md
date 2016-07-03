@@ -1,4 +1,14 @@
+
+
 # csharp-steamgaug-es-api
+[![Discord](https://img.shields.io/badge/discord-join%20chat-blue.svg)](https://discord.gg/011jg2foytc2XogS6)
+
+
+|               | Build Status  | 
+| ------------- |:-------------:| 
+| Linux/Mac     | [![Build status](https://travis-ci.org/igeligel/csharp-steamgaug-es-api.svg)](https://travis-ci.org/igeligel/csharp-steamgaug-es-api) | 
+| Windows       | [![Build status](https://ci.appveyor.com/api/projects/status/yj63her0xoo0t0sr?svg=true)](https://ci.appveyor.com/project/igeligel/csharp-steamgaug-es-api) |
+
 This is a .net core library for the API of [Steam Gauges](https://steamgaug.es/)
 
 ## Project
