@@ -57,6 +57,8 @@ EnsurePsbuildInstalled
 
 exec { & dotnet restore }
 
+#Invoke-MSBuild
+Set-MsBuild "C:\Program Files (x86)\MSBuild\14.0\bin\msbuild.exe"
 Invoke-MSBuild
 
 $revision = @{ $true = $env:APPVEYOR_BUILD_NUMBER; $false = 1 }[$env:APPVEYOR_BUILD_NUMBER -ne $NULL];
