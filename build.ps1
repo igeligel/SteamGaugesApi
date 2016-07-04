@@ -66,6 +66,10 @@ cd ..\csharp-steamgaug-es-api-test\
 
 dotnet restore
 
-exec { & dotnet test -c release normally }
-<#  #>
-<# exec { & dotnet pack .\src\MediatR -c Release -o .\artifacts --version-suffix=$revision } #>
+ls
+
+exec { & dotnet test -c release }
+
+cd ..\csharp-steamgaug-es-api-core\
+
+exec { & dotnet pack -c Release -o .\artifacts --version-suffix=$revision }
