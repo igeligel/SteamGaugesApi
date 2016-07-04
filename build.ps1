@@ -72,4 +72,4 @@ exec { & dotnet test -c release }
 
 cd ..\csharp-steamgaug-es-api-core\
 
-exec { & dotnet pack -c Release -o .\artifacts --version-suffix=$revision }
+exec { & dotnet pack -c Release -o .\artifacts }
