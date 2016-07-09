@@ -1,0 +1,19 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "src/csharp-steamgaug-es-api-core/project.json"
+          ],
+          "exclude": [
+            "**/bin/**",
+            "**/obj/**",
+            "_site/**"
+          ]
+        }
+      ],
+      "dest": "api"
+    }
+  ]
+}
