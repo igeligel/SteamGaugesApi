@@ -1,10 +1,13 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
+using SteamGaugesApi.Core.Converter;
 
 namespace SteamGaugesApi.Core.Models
 {
     public class GameCoordinatorInterface
     {
         [JsonProperty(PropertyName = "online")]
+        [JsonConverter(typeof(BoolConverter))]
         public bool Online { get; set; }
 
         [JsonProperty(PropertyName = "schema")]
@@ -20,7 +23,7 @@ namespace SteamGaugesApi.Core.Models
     public class Statistics
     {
         [JsonProperty(PropertyName = "warScore")]
-        public WarScore WarScore { get; set; }
+        public List<WarScore> WarScore { get; set; }
 
         [JsonProperty(PropertyName = "players_searching")]
         public int? PlayersSearching { get; set; }

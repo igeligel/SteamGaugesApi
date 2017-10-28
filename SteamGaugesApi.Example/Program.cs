@@ -1,4 +1,5 @@
 ﻿using System;
+using SteamGaugesApi.Core;
 
 namespace SteamGaugesApi.Example
 {
@@ -8,6 +9,9 @@ namespace SteamGaugesApi.Example
         {
             Console.WriteLine("Hello World!");
             Console.Read();
+            Client client = new Client();
+            var result = client.Get();
+            Console.WriteLine("awdwadwa");
         }
     }
 }

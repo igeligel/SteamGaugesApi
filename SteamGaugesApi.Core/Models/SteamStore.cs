@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using SteamGaugesApi.Core.Converter;
 using SteamGaugesApi.Core.Interfaces;
 
 namespace SteamGaugesApi.Core.Models
@@ -7,6 +8,7 @@ namespace SteamGaugesApi.Core.Models
 
     {
         [JsonProperty(PropertyName = "online")]
+        [JsonConverter(typeof(BoolConverter))]
         public bool Online { get; set; }
 
         [JsonProperty(PropertyName = "time")]
