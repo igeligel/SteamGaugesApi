@@ -48,7 +48,7 @@ namespace SteamGaugesApi.Test
         public void SteamCommunityOnline()
         {
             var response = _client.Get();
-            Assert.AreEqual(true, response.SteamCommunity.Online);
+            Assert.IsTrue(response.SteamCommunity.Online);
         }
 
         [TestMethod]
@@ -63,6 +63,93 @@ namespace SteamGaugesApi.Test
         {
             var response = _client.Get();
             Assert.AreEqual("No Error", response.SteamCommunity.Error);
+        }
+
+        [TestMethod]
+        public void SteamStoreOnline()
+        {
+            var response = _client.Get();
+            Assert.IsTrue(response.SteamStore.Online);
+        }
+
+        [TestMethod]
+        public void SteamStoreResponseTime()
+        {
+            var response = _client.Get();
+            Assert.AreEqual(28, response.SteamStore.ResponseTime);
+        }
+
+        [TestMethod]
+        public void SteamStoreResponseNoError()
+        {
+            var response = _client.Get();
+            Assert.AreEqual("No Error", response.SteamStore.Error);
+        }
+
+        [TestMethod]
+        public void SteamUserInterfaceOnline()
+        {
+            var response = _client.Get();
+            Assert.IsTrue(response.SteamUserInterface.Online);
+        }
+
+        [TestMethod]
+        public void SteamUserInterfaceResponseTime()
+        {
+            var response = _client.Get();
+            Assert.AreEqual(17, response.SteamUserInterface.ResponseTime);
+        }
+
+        [TestMethod]
+        public void SteamUserInterfaceResponseNoError()
+        {
+            var response = _client.Get();
+            Assert.AreEqual("No Error", response.SteamUserInterface.Error);
+        }
+
+        [TestMethod]
+        public void TestTeamFortressStressTest()
+        {
+            var response = _client.Get();
+            Assert.IsFalse(response.TeamFortressSystemInterface.StressTest);
+        }
+
+        [TestMethod]
+        public void TeamFortressEconomyItemsInterfaceOnline()
+        {
+            var response = _client.Get();
+            Assert.IsFalse(
+                response
+                    .EconomyItemsInterFace
+                    .TeamFortressEconomyItemsInterface
+                    .Online
+            );
+        }
+
+        [TestMethod]
+        public void TeamFortressEconomyItemsInterfaceResponseTime()
+        {
+            var response = _client.Get();
+            Assert.AreEqual(
+                56,
+                response
+                    .EconomyItemsInterFace
+                    .TeamFortressEconomyItemsInterface
+                    .ResponseTime
+            );
+        }
+
+        [TestMethod]
+        public void TeamFortressEconomyItemsInterfaceError()
+        {
+            var response = _client.Get();
+            Assert.AreEqual(
+                "503 Service Unavailable",
+                response
+                    .EconomyItemsInterFace
+                    .TeamFortressEconomyItemsInterface
+                    .Error
+            );
         }
     }
 }
