@@ -1,0 +1,16 @@
+image: Visual Studio 2017
+
+init:
+# nothing here
+
+before_build:
+- dotnet restore
+
+build_script:
+- dotnet build
+
+test_script:
+- cd SteamGaugesApi.Test && dotnet test && cd ..
+
+after_test:
+# Not done yet
