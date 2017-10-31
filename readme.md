@@ -1,5 +1,7 @@
 # SteamGaugesApi - Check steam status easily
 
+<a href="https://www.nuget.org/packages/SteamGaugesApi/"><img src="https://img.shields.io/nuget/dt/SteamGaugesApi.svg" alt="badge of nuget downloads" /></a>
+<a href="https://www.nuget.org/packages/SteamGaugesApi/"><img src="https://img.shields.io/nuget/v/SteamGaugesApi.svg" alt="badge of nuget version" /></a>
 <a href="./License.md"><img src="https://img.shields.io/github/license/igeligel/SteamGaugesApi.svg" alt="badge of license" /></a>
 <a href="https://ci.appveyor.com/project/igeligel/csharp-steamgaug-es-api"><img src="https://ci.appveyor.com/api/projects/status/yj63her0xoo0t0sr?svg=true" alt="Build status" /></a>
 <a href="https://github.com/igeligel/SteamGaugesApi/pulls"><img src="https://img.shields.io/badge/PR-welcome-green.svg" alt="badge of pull request welcome" /></a>
@@ -56,7 +58,7 @@ var response = client.Get();
 
 ## Contributors
 
-<table><thead><tr><th align="center"><a href="https://github.com/igeligel"><img src="https://avatars2.githubusercontent.com/u/12736734?v=3" width="100px;" style="max-width:100%;"><br><sub>igeligel</sub></a><br><p>Contributions: 127</p></th></tbody></table>
+<table><thead><tr><th align="center"><a href="https://github.com/igeligel"><img src="https://avatars2.githubusercontent.com/u/12736734?v=3" width="100px;" style="max-width:100%;"><br><sub>igeligel</sub></a><br><p>Contributions: 130</p></th></tbody></table>
 
 ## License
 
