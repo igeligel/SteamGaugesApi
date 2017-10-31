@@ -115,7 +115,7 @@ namespace SteamGaugesApi.Test
         }
 
         [TestMethod]
-        public void TeamFortressEconomyItemsInterfaceOnline()
+        public void TeamFortressEconomyItemsInterfaceNotOnline()
         {
             var response = _client.Get();
             Assert.IsFalse(
@@ -148,6 +148,82 @@ namespace SteamGaugesApi.Test
                 response
                     .EconomyItemsInterFace
                     .TeamFortressEconomyItemsInterface
+                    .Error
+            );
+        }
+
+        [TestMethod]
+        public void DotaEconomyItemsInterfaceOnline()
+        {
+            var response = _client.Get();
+            Assert.IsTrue(
+                response
+                    .EconomyItemsInterFace
+                    .DotaEconomyInterface
+                    .Online
+            );
+        }
+
+        [TestMethod]
+        public void DotaEconomyItemsInterfaceResponseTime()
+        {
+            var response = _client.Get();
+            Assert.AreEqual(
+                28,
+                response
+                    .EconomyItemsInterFace
+                    .DotaEconomyInterface
+                    .ResponseTime
+            );
+        }
+
+        [TestMethod]
+        public void DotaEconomyItemsInterfaceNoError()
+        {
+            var response = _client.Get();
+            Assert.AreEqual(
+                "No Error",
+                response
+                    .EconomyItemsInterFace
+                    .DotaEconomyInterface
+                    .Error
+            );
+        }
+
+        [TestMethod]
+        public void CounterStrikeGlobalOffensiveEconomyItemsInterfaceNotOnline()
+        {
+            var response = _client.Get();
+            Assert.IsFalse(
+                response
+                    .EconomyItemsInterFace
+                    .CounterStrikeGlobalOffensiveEconomyInterface
+                    .Online
+            );
+        }
+
+        [TestMethod]
+        public void
+            CounterStrikeGlobalOffensiveEconomyItemsInterfaceResponseTime()
+        {
+            var response = _client.Get();
+            Assert.AreEqual(
+                32,
+                response
+                    .EconomyItemsInterFace
+                    .CounterStrikeGlobalOffensiveEconomyInterface
+                    .ResponseTime
+            );
+        }
+
+        [TestMethod]
+        public void CounterStrikeGlobalOffensiveEconomyItemsInterfaceNullError()
+        {
+            var response = _client.Get();
+            Assert.IsNull(
+                response
+                    .EconomyItemsInterFace
+                    .CounterStrikeGlobalOffensiveEconomyInterface
                     .Error
             );
         }
