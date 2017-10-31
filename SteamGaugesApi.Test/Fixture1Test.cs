@@ -10,22 +10,21 @@ namespace SteamGaugesApi.Test
     [TestClass]
     public class Fixture1Test
     {
-        private readonly Mock<FakeHttpMessageHandler> _fakeHttpMessageHandler;
         private readonly Client _client;
 
         public Fixture1Test()
         {
-            _fakeHttpMessageHandler = new Mock<FakeHttpMessageHandler>
+            var fakeHttpMessageHandler = new Mock<FakeHttpMessageHandler>
             {
                 CallBase = true
             };
-            var httpCliet = new HttpClient(_fakeHttpMessageHandler.Object);
+            var httpCliet = new HttpClient(fakeHttpMessageHandler.Object);
             string json;
             using (var r = new StreamReader("./fixtures/fixture-1.json"))
             {
                 json = r.ReadToEnd();
             }
-            _fakeHttpMessageHandler
+            fakeHttpMessageHandler
                 .Setup(f => f.Send(It.IsAny<HttpRequestMessage>())).Returns(
                     new HttpResponseMessage
                     {
