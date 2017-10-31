@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>SteamGaugesApi</PackageId>
+    <Authors>Kevin Peters</Authors>
+    <Company />
+    <Product>SteamGaugesApi</Product>
+    <Description>SteamGaugesApi is an API client for checking the status of Steam, Dota, CS:GO and Team Fortress.
+
+It will enable you to check the status of those platforms in a really easy way. Super helpful for writing bots or sites based around Steam's item system.</Description>
+    <Copyright>Copyright © Kevin Peters 2008 - present</Copyright>
+    <PackageLicenseUrl>https://github.com/igeligel/csharp-steamgaug-es-api/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/igeligel/csharp-steamgaug-es-api</RepositoryUrl>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Title>SteamGaugesApi</Title>  
+    <RepositoryType>git</RepositoryType>
+    <NetStandardImplicitPackageVersion>2.0.0</NetStandardImplicitPackageVersion>  
+    <PackageProjectUrl>https://github.com/igeligel/csharp-steamgaug-es-api</PackageProjectUrl>
+    <PackageIconUrl>http://svgur.com/i/3f2.svg</PackageIconUrl>
+    <PackageTags>steam, dota, csgo, team fortress, uptime, check</PackageTags>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,88 @@
+{
+  "ISteamClient": {
+    "online": 1
+  },
+  "SteamCommunity": {
+    "online": 1,
+    "time": 21,
+    "error": "No Error"
+  },
+  "SteamStore": {
+    "online": 1,
+    "time": 33,
+    "error": "No Error"
+  },
+  "ISteamUser": {
+    "online": 1,
+    "time": 20,
+    "error": "No Error"
+  },
+  "ITFSystem_440": {
+    "stress_test": false
+  },
+  "IEconItems": {
+    "440": {
+      "online": 1,
+      "time": 95,
+      "error": "No Error"
+    },
+    "570": {
+      "online": 1,
+      "time": 23,
+      "error": "No Error"
+    },
+    "730": {
+      "online": 2,
+      "time": 24,
+      "error": null
+    }
+  },
+  "ISteamGameCoordinator": {
+    "440": {
+      "online": 1,
+      "schema":
+        "http://media.steampowered.com/apps/440/scripts/items/items_game.04d343a72bf701c40864b87351095a4e251a640e.txt",
+      "error": "No Error",
+      "stats": {
+        "warScore": [
+          {
+            "side": 1,
+            "score": {
+              "low": 6422457,
+              "high": 0,
+              "unsigned": true
+            }
+          },
+          {
+            "side": 0,
+            "score": {
+              "low": 5072919,
+              "high": 0,
+              "unsigned": true
+            }
+          }
+        ]
+      }
+    },
+    "570": {
+      "online": 1,
+      "error": "No Error",
+      "stats": {
+        "players_searching": 40620
+      }
+    },
+    "730": {
+      "online": 1,
+      "error": "No Error",
+      "stats": {
+        "players_searching": 9092,
+        "average_wait": 72133,
+        "ongoing_matches": 20363,
+        "servers_available": 168794,
+        "servers_online": 247783,
+        "menu_url": "",
+        "players_online": 470401
+      }
+    }
+  }
+}

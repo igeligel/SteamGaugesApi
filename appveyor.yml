@@ -1,39 +1,13 @@
-version: 1.4.0.{build}
-pull_requests:  
-  do_not_increment_build_number: true
-branches:
-  only:
-  - master
-nuget:  
-  disable_publish_on_pr: true
-skip_tags: true
+image: Visual Studio 2017
+
+init:
+# nothing here
+
 before_build:
-- ps: >-
-    
-    (new-object net.webclient).DownloadFile('https://go.microsoft.com/fwlink/?LinkID=809122','core.exe')
+- dotnet restore
 
-    core.exe /install /quiet /norestart
+build_script:
+- dotnet build
 
-    dotnet --version
-build_script:  
-- ps: .\Build.ps1
-test: off
-artifacts:  
-- path: .\**\artifacts\**\*.nupkg
-  name: MyGet
-deploy:  
-- provider: NuGet
-  server: https://www.myget.org/feed/Details/csharp-steamgaug-es-api-core
-  api_key:
-    secure: EmqtrRaJs9WTPky20B0Faa2jfGXU9CxNdImSfyFMEFxyQ62ESLididWSumqSuHCW
-  skip_symbols: true
-  on:
-    branch: master
-    appveyor_repo_tag: true
-- provider: NuGet
-  name: production
-  api_key:
-    secure: gyKiWQbl6dIjAKuQE7blJ/6b9ZG11PG5Ys7HPoGRspU7w57UhYCa46Rny/tch2B+
-  on:
-    branch: master
-    appveyor_repo_tag: true
+test_script:
+- cd SteamGaugesApi.Test && dotnet test && cd ..
