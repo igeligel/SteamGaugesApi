@@ -7,11 +7,13 @@ namespace SteamGaugesApi.Example
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Press a key to fetch the API...");
             Console.Read();
-            Client client = new Client();
+            var client = new Client();
             var result = client.Get();
-            Console.WriteLine("awdwadwa");
+            Console.WriteLine(
+                "API was fetched. Next time debug here to get more information."
+            );
         }
     }
 }
